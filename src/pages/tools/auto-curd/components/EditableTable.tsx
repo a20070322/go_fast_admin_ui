@@ -1,7 +1,7 @@
 /*
  * @Author: 赵忠洋
  * @Date: 2021-08-20 15:16:12
- * @LastEditTime: 2021-08-20 19:34:13
+ * @LastEditTime: 2021-08-23 19:15:18
  * @LastEditors: 赵忠洋
  * @Description:
  * @FilePath: /goAdminUI2/src/pages/tools/auto-curd/components/EditableTable.tsx
@@ -17,38 +17,21 @@ interface Props {
   onChange?: (value: FieldsType[]) => void;
 }
 const EditableTable = (props: Props) => {
-  const [tableData, setTableData] = useState<FieldsType[]>(props.value || [
-    {
-      "id": 1629457815293,
-      "field_type": "String",
-      "field_name": "shop_name",
-      "field_comment": "商品名称",
-      "field_default": "",
-      "is_sensitive": false,
-      "is_optional": false,
-      "is_unique": false,
-      "is_insert": true,
-      "is_edit": true,
-      "is_list_show": true,
-      "is_list_default_show": true,
-      "is_search": true,
-      "search_type": "6",
-      "show_type": "1",
-      "show_config": "",
-      "dict_type": ""
-    }
-  ])
+  const [tableData, setTableData] = useState<FieldsType[]>(props.value || [])
   const dictAutoCurdFieldType = useDict("auto_curd_field_type")
   const dictAutoCurdSearchType = useDict("auto_curd_search_type")
   const dictAutoCurdShowType = useDict("auto_curd_show_type")
   const dictOptions = useDict()
   useEffect(() => {
-    console.log("触发改变");
     props.onChange && props.onChange(tableData)
   }, [tableData])
+  useEffect(() => {
+    if (props.value&&(JSON.stringify(props.value || [])!==JSON.stringify(tableData))) {
+      setTableData(props.value || [])
+    }
+  }, [props.value])
   return (
     <Fragment>
-      {JSON.stringify(tableData)}<br />
       <Button type="primary" onClick={
         () => {
           let arr = tableData.slice(0)

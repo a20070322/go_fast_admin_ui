@@ -1,7 +1,7 @@
 /*
  * @Author: 赵忠洋
  * @Date: 2021-08-06 18:01:27
- * @LastEditTime: 2021-08-19 20:34:23
+ * @LastEditTime: 2021-08-26 13:57:48
  * @LastEditors: 赵忠洋
  * @Description:
  * @FilePath: /goAdminUI2/.umirc.ts
@@ -26,7 +26,7 @@ export default defineConfig({
   },
   history: { type: "hash" },
   publicPath: './',
-  // mfsu: {},
+  mfsu: {},
   lessLoader: {
     modifyVars: {
       hack: 'true; @import "~@/styles/main.less";',
