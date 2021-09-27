@@ -1,7 +1,7 @@
 /*
  * @Author: 赵忠洋
  * @Date: 2021-08-06 18:01:27
- * @LastEditTime: 2021-08-26 13:57:48
+ * @LastEditTime: 2021-09-27 20:48:04
  * @LastEditors: 赵忠洋
  * @Description:
  * @FilePath: /goAdminUI2/.umirc.ts
@@ -24,9 +24,12 @@ export default defineConfig({
     immer: true,
     hmr: false,
   },
+  dynamicImport: {
+    loading: '@/components/loading/Loading',
+  },
   history: { type: "hash" },
   publicPath: './',
-  mfsu: {},
+  // mfsu: {},
   lessLoader: {
     modifyVars: {
       hack: 'true; @import "~@/styles/main.less";',

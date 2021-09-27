@@ -1,7 +1,7 @@
 /*
  * @Author: 赵忠洋
  * @Date: 2021-08-17 09:12:57
- * @LastEditTime: 2021-08-18 18:08:08
+ * @LastEditTime: 2021-09-18 13:45:17
  * @LastEditors: 赵忠洋
  * @Description:
  * @FilePath: /goAdminUI2/src/pages/system/menu/components/MenuFormAdd.tsx
@@ -58,7 +58,7 @@ const MenuFormAdd = (props: Props) => {
           formRef.current?.resetFields()
           props.onSuccess && props.onSuccess()
           return true
-        } catch (error) {
+        } catch (error:any) {
           message.error(`操作失败:${error.msg || "系统错误"}`,)
           return false
         }
