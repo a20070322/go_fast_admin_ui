@@ -16,7 +16,7 @@ export default defineConfig({
   devtool: "source-map",
   proxy: {
     '/api': {
-      target: 'http://127.0.0.1:8088',
+      target: 'https://api.ahh5.com',
       changeOrigin: true,
     },
   },
